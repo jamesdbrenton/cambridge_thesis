@@ -347,7 +347,9 @@
 
 
 #let main-body(body) = {
-  set heading(numbering: "1.1.1", supplement: "chapter")
+  set heading(numbering: "1.1.1", supplement: it => if it.depth == 1 {
+    "chapter"
+  } else { "section" })
   counter(heading).update(0)
   body
 }
