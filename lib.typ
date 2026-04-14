@@ -80,6 +80,9 @@
     v(0.2em)
   }
 
+  show emph: set text(fill: _emphasis-text-colour(mode: mode))
+  show strong: set text(fill: _emphasis-text-colour(mode: mode))
+
   set math.equation(numbering: n => {
     let chapter = counter(heading).at(here()).at(0)
     numbering("1.1", chapter, n)
